@@ -1,0 +1,9 @@
+../Inc/sevensegFunctions.c:11:6:segment	4
+../Inc/sevensegFunctions.c:47:6:num	14
+../Inc/sevensegFunctions.c:107:6:numSing	10
+../Inc/sevensegFunctions.c:151:6:upSeg	4
+../Inc/sevensegFunctions.c:175:6:upSingSeg	2
+../Inc/sevensegFunctions.c:185:6:downSeg	15
+../Inc/sevensegFunctions.c:248:6:downSingSeg	2
+../Inc/sevensegFunctions.c:257:6:placeHolder	5
+../Inc/sevensegFunctions.c:288:6:blink	1

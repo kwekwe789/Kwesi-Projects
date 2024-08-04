@@ -1,0 +1,5 @@
+C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	16	static,ignoring_inline_asm
+../Inc/init.c:10:6:initIRQ	8	static
+../Inc/init.c:27:6:initKey	8	static
+../Inc/init.c:34:6:initLED	8	static
+../Inc/init.c:39:6:initTimer	8	static

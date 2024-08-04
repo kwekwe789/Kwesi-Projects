@@ -1,0 +1,369 @@
+#include "sevenseg.h"
+/*
+ * sevenseg.c
+ *
+ *  Created on: Jul 20, 2024
+ *      Author: kwkye
+ */
+
+void init(void) //initializes all pins used to power the display
+{
+	gpio_Output('a',5);
+	gpio_Output('a',0);
+	gpio_Output('a',6);
+	gpio_Output('a',7);
+	gpio_Output('a',8);
+	gpio_Output('a',9);
+	gpio_Output('a',10);
+	gpio_Output('b',3);
+	gpio_Output('b',4);
+	gpio_Output('b',5);
+	gpio_Output('b',6);
+	gpio_Output('b',10);
+	gpio_Output('c',7);
+	gpio_Output('b',1);
+	gpio_Output('b',12);
+	gpio_Output('b',2);
+	gpio_Output('b',14);
+	gpio_Output('b',13);
+	gpio_Output('c',4);
+	gpio_Output('b',15);
+}
+
+void seg1(void) //powers the pins that correspond to the number on the pinout for a millisecond the turns them off
+{
+	gpio_ON('a',9);
+	gpio_ON('b',4);
+	delay(0);
+	gpio_OFF('a',9);
+	gpio_OFF('b',4);
+}
+void seg2(void)
+{
+	gpio_ON('a',6);
+	gpio_ON('a',9);
+	gpio_ON('a',10);
+	gpio_ON('b',3);
+	gpio_ON('b',10);
+	delay(0);
+	gpio_OFF('a',6);
+	gpio_OFF('a',9);
+	gpio_OFF('a',10);
+	gpio_OFF('b',3);
+	gpio_OFF('b',10);
+}
+void seg3(void)
+{
+	gpio_ON('a',9);
+	gpio_ON('a',6);
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	gpio_ON('b',3);
+	delay(0);
+	gpio_OFF('a',9);
+	gpio_OFF('a',6);
+	gpio_OFF('b',4);
+	gpio_OFF('b',3);
+	gpio_OFF('b',10);
+}
+void seg4(void)
+{
+	gpio_ON('a',9);
+	gpio_ON('a',7);
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	delay(0);
+	gpio_OFF('a',9);
+	gpio_OFF('a',7);
+	gpio_OFF('b',4);
+	gpio_OFF('b',10);
+}
+void seg5(void)
+{
+	gpio_ON('a',7);
+	gpio_ON('a',6);
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	gpio_ON('b',3);
+	delay(0);
+	gpio_OFF('a',7);
+	gpio_OFF('a',6);
+	gpio_OFF('b',4);
+	gpio_OFF('b',3);
+	gpio_OFF('b',10);
+}
+void seg6(void)
+{
+	gpio_ON('a',7);
+	gpio_ON('a',6);
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	gpio_ON('b',3);
+	gpio_ON('a',10);
+	delay(0);
+	gpio_OFF('a',7);
+	gpio_OFF('a',6);
+	gpio_OFF('b',4);
+	gpio_OFF('b',3);
+	gpio_OFF('b',10);
+	gpio_OFF('a',10);
+}
+void seg7(void)
+{
+	gpio_ON('a',9);
+	gpio_ON('b',4);
+	gpio_ON('a',6);
+	delay(0);
+	gpio_OFF('a',9);
+	gpio_OFF('a',6);
+	gpio_OFF('b',4);
+}
+void seg8(void)
+{
+	gpio_ON('a',7);
+	gpio_ON('a',6);
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	gpio_ON('b',3);
+	gpio_ON('a',10);
+	gpio_ON('a',9);
+	delay(0);
+	gpio_OFF('a',7);
+	gpio_OFF('a',6);
+	gpio_OFF('b',4);
+	gpio_OFF('b',3);
+	gpio_OFF('b',10);
+	gpio_OFF('a',10);
+	gpio_OFF('a',9);
+}
+void seg9(void)
+{
+	gpio_ON('a',9);
+	gpio_ON('a',7);
+	gpio_ON('a',6);
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	delay(0);
+	gpio_OFF('a',9);
+	gpio_OFF('a',6);
+	gpio_OFF('a',7);
+	gpio_OFF('b',4);
+	gpio_OFF('b',10);
+}
+void seg0(void)
+{
+	gpio_ON('a',7);
+	gpio_ON('a',6);
+	gpio_ON('b',4);
+	gpio_ON('b',3);
+	gpio_ON('a',10);
+	gpio_ON('a',9);
+	delay(0);
+	gpio_OFF('a',7);
+	gpio_OFF('a',6);
+	gpio_OFF('b',4);
+	gpio_OFF('b',3);
+	gpio_OFF('a',10);
+	gpio_OFF('a',9);
+}
+void segA(void)
+{
+	gpio_ON('a',7);
+	gpio_ON('a',6);
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	gpio_ON('a',10);
+	gpio_ON('a',9);
+	delay(0);
+	gpio_OFF('a',7);
+	gpio_OFF('a',6);
+	gpio_OFF('b',4);
+	gpio_OFF('b',10);
+	gpio_OFF('a',10);
+	gpio_OFF('a',9);
+}
+void segB(void)
+{
+	gpio_ON('a',7);
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	gpio_ON('b',3);
+	gpio_ON('a',10);
+	delay(0);
+	gpio_OFF('a',7);
+	gpio_OFF('b',4);
+	gpio_OFF('b',3);
+	gpio_OFF('b',10);
+	gpio_OFF('a',10);
+}
+void segC(void)
+{
+	gpio_ON('a',7);
+	gpio_ON('a',6);
+	gpio_ON('b',3);
+	gpio_ON('a',10);
+	delay(0);
+	gpio_OFF('a',7);
+	gpio_OFF('a',6);
+	gpio_OFF('b',3);
+	gpio_OFF('a',10);
+}
+void segD(void)
+{
+	gpio_ON('b',4);
+	gpio_ON('b',10);
+	gpio_ON('b',3);
+	gpio_ON('a',10);
+	gpio_ON('a',9);
+	delay(0);
+	gpio_OFF('b',4);
+	gpio_OFF('b',3);
+	gpio_OFF('b',10);
+	gpio_OFF('a',10);
+	gpio_OFF('a',9);
+}
+
+void singseg0(void)
+{
+	gpio_ON('b',1);
+	gpio_ON('b',12);
+	gpio_ON('b',2);
+	gpio_ON('b',14);
+	gpio_ON('b',13);
+	gpio_ON('c',4);
+	delay(0);
+	gpio_OFF('b',1);
+	gpio_OFF('b',12);
+	gpio_OFF('b',2);
+	gpio_OFF('b',14);
+	gpio_OFF('b',13);
+	gpio_OFF('c',4);
+}
+void singseg1(void)
+{
+	gpio_ON('b',12);
+	gpio_ON('b',14);
+	delay(0);
+	gpio_OFF('b',12);
+	gpio_OFF('b',14);
+}
+void singseg2(void)
+{
+	gpio_ON('b',13);
+	gpio_ON('c',4);
+	gpio_ON('b',15);
+	gpio_ON('b',2);
+	gpio_ON('b',12);
+	delay(0);
+	gpio_OFF('b',13);
+	gpio_OFF('c',4);
+	gpio_OFF('b',15);
+	gpio_OFF('b',2);
+	gpio_OFF('b',12);
+}
+void singseg3(void)
+{
+	gpio_ON('b',13);
+	gpio_ON('b',14);
+	gpio_ON('b',15);
+	gpio_ON('b',2);
+	gpio_ON('b',12);
+	delay(0);
+	gpio_OFF('b',13);
+	gpio_OFF('b',14);
+	gpio_OFF('b',15);
+	gpio_OFF('b',2);
+	gpio_OFF('b',12);
+}
+void singseg4(void)
+{
+	gpio_ON('b',14);
+	gpio_ON('b',1);
+	gpio_ON('b',15);
+	gpio_ON('b',12);
+	delay(0);
+	gpio_OFF('b',14);
+	gpio_OFF('b',1);
+	gpio_OFF('b',15);
+	gpio_OFF('b',12);
+}
+void singseg5(void)
+{
+	gpio_ON('b',13);
+	gpio_ON('b',14);
+	gpio_ON('b',15);
+	gpio_ON('b',2);
+	gpio_ON('b',1);
+	delay(0);
+	gpio_OFF('b',13);
+	gpio_OFF('b',14);
+	gpio_OFF('b',15);
+	gpio_OFF('b',2);
+	gpio_OFF('b',1);
+}
+void singseg6(void)
+{
+	gpio_ON('b',13);
+	gpio_ON('b',14);
+	gpio_ON('b',15);
+	gpio_ON('b',2);
+	gpio_ON('b',1);
+	gpio_ON('c',4);
+	delay(0);
+	gpio_OFF('b',13);
+	gpio_OFF('b',14);
+	gpio_OFF('b',15);
+	gpio_OFF('b',2);
+	gpio_OFF('b',1);
+	gpio_OFF('c',4);
+}
+void singseg7(void)
+{
+	gpio_ON('b',12);
+	gpio_ON('b',14);
+	gpio_ON('b',2);
+	delay(0);
+	gpio_OFF('b',12);
+	gpio_OFF('b',14);
+	gpio_OFF('b',2);
+}
+void singseg8(void)
+{
+	gpio_ON('b',1);
+	gpio_ON('b',12);
+	gpio_ON('b',2);
+	gpio_ON('b',14);
+	gpio_ON('b',13);
+	gpio_ON('c',4);
+	gpio_ON('b',15);
+	delay(0);
+	gpio_OFF('b',1);
+	gpio_OFF('b',12);
+	gpio_OFF('b',2);
+	gpio_OFF('b',14);
+	gpio_OFF('b',13);
+	gpio_OFF('c',4);
+	gpio_OFF('b',15);
+}
+void singseg9(void)
+{
+	gpio_ON('b',1);
+	gpio_ON('b',12);
+	gpio_ON('b',2);
+	gpio_ON('b',14);
+	gpio_ON('b',15);
+	delay(0);
+	gpio_OFF('b',1);
+	gpio_OFF('b',12);
+	gpio_OFF('b',2);
+	gpio_OFF('b',14);
+	gpio_OFF('b',15);
+}
+void dec(void)
+{
+	gpio_ON('b',5);
+	delay(0);
+	gpio_OFF('b',5);
+}
+
+

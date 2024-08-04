@@ -1,0 +1,9 @@
+C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	16	static,ignoring_inline_asm
+../Inc/gpio.c:21:6:delay	24	static
+../Inc/gpio.c:33:6:gpio_Output	24	static
+../Inc/gpio.c:75:6:gpio_ON	16	static
+../Inc/gpio.c:102:6:gpio_OFF	24	static
+../Inc/gpio.c:138:6:gpio_Toggle	16	static
+../Inc/gpio.c:165:6:gpio_Blink	48	static
+../Inc/gpio.c:224:6:gpio_Input	24	static
+../Inc/gpio.c:280:6:IRQ_Initial	32	static,ignoring_inline_asm

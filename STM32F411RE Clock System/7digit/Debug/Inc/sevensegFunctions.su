@@ -1,0 +1,9 @@
+../Inc/sevensegFunctions.c:11:6:segment	16	static
+../Inc/sevensegFunctions.c:47:6:num	16	static
+../Inc/sevensegFunctions.c:107:6:numSing	16	static
+../Inc/sevensegFunctions.c:151:6:upSeg	4	static
+../Inc/sevensegFunctions.c:175:6:upSingSeg	4	static
+../Inc/sevensegFunctions.c:185:6:downSeg	4	static
+../Inc/sevensegFunctions.c:248:6:downSingSeg	4	static
+../Inc/sevensegFunctions.c:257:6:placeHolder	16	static
+../Inc/sevensegFunctions.c:288:6:blink	8	static
