@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<emailTemplates>
+	<registration>
+		<Subject>Successful Registration</Subject>
+		<Body>
+			"Hello " + Sql.getName(user)
+			+ "! Below are your login credentials for the Red Agents IT Ticketing System.\n"
+			+ "Your access is pending administrative approval. You will be notified when your registration status is confirmed.\n\n"
+			+ "Username: " + user + "\n" + "Password: " + Sql.getPass(user) + "\n\n"
+			+ "Please do not share your credentials with anyone!" + "\n" + "- Red Agents IT"
+		</Body>
+	</registration>
+	<regApproved>
+		<Subject>Registration Approved</Subject>
+	</regApproved>
+	<regDenied>
+		<Subject>Registration Denied</Subject>
+		<Body></Body>
+	</regDenied>
+</emailTemplates>
