@@ -1,0 +1,13 @@
+# cshell makefile
+default:
+	g++ -c -o shell.o  shell.cpp
+	g++ -c -o main.o  main.cpp
+	g++ -c -o process.o  process.cpp
+	g++ -c -o scheduler.o  scheduler.cpp
+	g++ -c -o sorter.o  sorter.cpp
+	g++ -c -o queue.o  queue.cpp
+	g++ -c -o tlb.o  tlb.cpp
+	g++ main.o shell.o process.o scheduler.o sorter.o queue.o tlb.o -o cshell
+
+clean:
+	rm *.o cshell
